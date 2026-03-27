@@ -2,24 +2,24 @@
 This is a simple AI agent to analyze data from ATB. The ATB CLI has been integrated into this AI agent along with PubMed.   
 
 To run: 
-## 1. Clone the repository.
+## 1. Clone the repository
 
 ```
 git clone https://github.com/AMR-genomics-hackathon-2026/atb-ai-agent.git
 cd atb-ai-agent
 ```
 
-## 2. Setup the environment.  
+## 2. Setup the environment   
 Create a virtual environment and install dependencies:  
 ```
 uv sync
 ```
 
-## 3. Install CLIs.
+## 3. Install CLIs
 [AllTheBacteria Claude CLI](https://github.com/AMR-genomics-hackathon-2026/atb-cli-claude)  
 [MLST CLI](https://github.com/tseemann/mlst)  
 
-## 4. Configure API keys.  
+## 4. Configure API keys  
 [Anthropic API Key](console.anthropic.com)  
 [NCBI API Key](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/api/api-keys/)  
 Create a ```.env``` in the project root:
@@ -27,7 +27,7 @@ Create a ```.env``` in the project root:
 ANTHROPIC_API_KEY=your_api_key_here
 NCBI_API_KEY=your_api_key_here
 ```
-## 5. Run the ATB AI Agent!  
+## 5. Run the ATB AI Agent  
 ```uv run main.py```  
 
 Example prompts:  
