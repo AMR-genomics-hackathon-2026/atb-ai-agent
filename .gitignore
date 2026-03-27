@@ -2,5 +2,6 @@
 logs/
 data/mlst_processed_all_samples.tsv
 data/scheme_species_map_combined.csv
-data/
+data/scheme_species_map.tab
+data/atb.metadata.202408.sqlite.xz
 outputs/

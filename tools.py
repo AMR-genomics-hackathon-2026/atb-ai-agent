@@ -13,7 +13,10 @@ async def mlst_scheme(args: dict[str, Any]) -> dict[str, Any]:
     scheme_species_map = scheme_species_map.rename(columns={"SCHEME": "mlst_scheme", "SPECIES": "species"})
 
     # merge scheme_species_map with MLST data from ATB
-    new_mlst_data = mlst_data.merge(scheme_species_map, on="mlst_scheme")
+    new_mlst_data = (mlst_data
+                     .merge(scheme_species_map, on="mlst_scheme")
+                     .rename(columns={"mlst_st": "mlst_sequence_type"})
+                     )
     
     # written out MLST sequence type name 
     file_path = "outputs/mlst_data.csv"
