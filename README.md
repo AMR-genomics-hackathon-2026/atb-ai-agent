@@ -34,4 +34,6 @@ NCBI_API_KEY=your_api_key_here
 
 Example prompts:  
 - Can you run MLST on the fasta sequence in the folder data?
-- Can you extract the 5 relevant publications from the past year to a recent outbreak for "Staphylococcus aureus" with "ST8"? Search PubMed. And save the output of these papers to the outputs folder.
+- Can you extract the 5 relevant publications from the past year to a recent outbreak for "Staphylococcus aureus" with "ST8"? Search PubMed. And save the output of these papers to the outputs folder.  
+
+Note: MLST was added as a tool to show that perhaps we can add other tasks (e.g., annotation, assembly, etc.) to the ATB Agent in the future!
