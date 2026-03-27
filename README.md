@@ -16,8 +16,8 @@ uv sync
 ```
 
 ## 3. Install CLIs.
-[AllTheBacteria Claude CLI](https://github.com/AMR-genomics-hackathon-2026/atb-cli-claude).  
-[MLST CLI](https://github.com/tseemann/mlst).  
+[AllTheBacteria Claude CLI](https://github.com/AMR-genomics-hackathon-2026/atb-cli-claude)  
+[MLST CLI](https://github.com/tseemann/mlst)  
 
 ## 4. Configure API keys.  
 [Anthropic API Key](console.anthropic.com)  
