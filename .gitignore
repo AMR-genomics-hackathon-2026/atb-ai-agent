@@ -5,3 +5,4 @@ data/scheme_species_map_combined.csv
 data/scheme_species_map.tab
 data/atb.metadata.202408.sqlite.xz
 outputs/
+atb-ai-agent/data/GCF_000013425.1_ASM1342v1_genomic.fna

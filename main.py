@@ -14,7 +14,7 @@ import os
 from rich import print
 from rich.console import Console
 from cli_tools import parser, print_rich_message, parse_and_print_message, get_user_input
-from tools import mlst_scheme
+from tools import run_mlst
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -26,10 +26,9 @@ async def main():
     mlst_tools_server = create_sdk_mcp_server(
         name="mlst_tools",
         version="1.0.0",
-        tools=[mlst_scheme]
+        tools=[run_mlst]
     )
     
-
     options = ClaudeAgentOptions(
         model=args.model,
         permission_mode="acceptEdits",
@@ -48,7 +47,8 @@ async def main():
             # add all PubMed tools
             'mcp__pubmed__*',
             # custom tools
-            'mcp__mlst_tools__mlst_scheme'
+            'mcp__mlst_tools__run_mlst',
+            'mcp__atb__*'
         ],
         # MCP servers include: All custom tools and GitLab
         mcp_servers={ 
@@ -62,9 +62,16 @@ async def main():
                     "NCBI_API_KEY": os.getenv("NCBI_API_KEY")
                     }
                 },
+
+            "mlst_tools": mlst_tools_server,
             
-            "mlst_tools": mlst_tools_server
+            "atb": {
+                "type": "stdio",
+                "command": "atb",
+                "args": ["mcp"]
+                }
             },
+        
         agents={
             "mlst-agent": AgentDefinition(
                 description = f""" This agent has access to a tool that will put together the MLST file with all of the species name. Always format
@@ -74,7 +81,7 @@ async def main():
                 """,
                 model = "haiku",
                 tools=[
-                    'mcp__mlst_tools__mlst_scheme'
+                    'mcp__mlst_tools__run_mlst'
                 ]
             )
         }
