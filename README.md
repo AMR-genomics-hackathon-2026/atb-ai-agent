@@ -1,4 +1,4 @@
-# An Agentic System for AllTheBacteria
+# An AI Agent for AllTheBacteria
 This is a simple AI agent to analyze data from ATB. The tasks that can be done include querying the ATB CLI, performing a PubMed search, and also performing MLST analysis.  
 
 To run: 
